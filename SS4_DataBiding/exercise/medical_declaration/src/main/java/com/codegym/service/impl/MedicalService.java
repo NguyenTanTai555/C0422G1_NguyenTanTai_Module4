@@ -12,38 +12,39 @@ import java.util.List;
 public class MedicalService implements IMedicalService {
     @Autowired
     IMedicalRepository iMedicalRepository;
+
     @Override
     public List<String> showDayList() {
-        return null;
+        return this.iMedicalRepository.showDayList();
     }
 
     @Override
     public List<String> showMonthList() {
-        return null;
+        return this.iMedicalRepository.showMonthList();
     }
 
     @Override
     public List<String> showYearList() {
-        return null;
+        return this.iMedicalRepository.showYearList();
     }
 
     @Override
     public List<String> genderList() {
-        return null;
+        return this.iMedicalRepository.genderList();
     }
 
     @Override
     public List<String> nationalityList() {
-        return null;
+        return this.iMedicalRepository.nationalityList();
     }
 
     @Override
     public List<String> yearOfBirthList() {
-        return null;
+        return this.iMedicalRepository.yearOfBirthList();
     }
 
     @Override
     public List<String> informationList() {
-        return null;
+        return this.iMedicalRepository.informationList();
     }
 }

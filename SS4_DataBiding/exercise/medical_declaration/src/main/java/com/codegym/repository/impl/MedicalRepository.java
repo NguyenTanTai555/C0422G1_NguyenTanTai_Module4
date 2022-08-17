@@ -38,7 +38,7 @@ public class MedicalRepository implements IMedicalRepository {
         informationList.add("boat");
         informationList.add("car");
 
-        for (int i = 1985; i < 2022 ; i++) {
+        for (int i = 1985; i < 2022; i++) {
             yearOfBirthList.add(String.valueOf(i));
         }
 
@@ -46,7 +46,7 @@ public class MedicalRepository implements IMedicalRepository {
             dayList.add(String.valueOf(i));
         }
 
-        for (int i = 0; i <= 12; i++) {
+        for (int i = 1; i <= 12; i++) {
             monthList.add(String.valueOf(i));
         }
 

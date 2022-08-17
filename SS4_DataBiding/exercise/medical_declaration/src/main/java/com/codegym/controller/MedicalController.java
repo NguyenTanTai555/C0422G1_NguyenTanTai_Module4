@@ -18,22 +18,21 @@ public class MedicalController {
 
     @GetMapping("/medical")
     public String goMedical(Model model) {
-        model.addAttribute("medical",new Medical());
-        model.addAttribute("day",this.iMedicalService.showDayList());
-        model.addAttribute("month",this.iMedicalService.showMonthList());
-        model.addAttribute("year",this.iMedicalService.showYearList());
-        model.addAttribute("yearOfBirth",this.iMedicalService.yearOfBirthList());
-        model.addAttribute("gender",this.iMedicalService.genderList());
-        model.addAttribute("information",this.iMedicalService.informationList());
-        model.addAttribute("nationality",this.iMedicalService.nationalityList());
+        model.addAttribute("medical", new Medical());
+        model.addAttribute("dayList", this.iMedicalService.showDayList());
+        model.addAttribute("monthList", this.iMedicalService.showMonthList());
+        model.addAttribute("yearList", this.iMedicalService.showYearList());
+        model.addAttribute("yearOfBirth", this.iMedicalService.yearOfBirthList());
+        model.addAttribute("genderList", this.iMedicalService.genderList());
+        model.addAttribute("informationList", this.iMedicalService.informationList());
+        model.addAttribute("nationalityList", this.iMedicalService.nationalityList());
         return "medical";
     }
 
-    @PostMapping("/update")
+    @PostMapping("/sen")
     public String update(@ModelAttribute Medical medical,
-                         RedirectAttributes redirectAttributes){
-        redirectAttributes.addFlashAttribute("medical",medical);
+                         RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("medical", medical);
         return "view";
-
     }
 }

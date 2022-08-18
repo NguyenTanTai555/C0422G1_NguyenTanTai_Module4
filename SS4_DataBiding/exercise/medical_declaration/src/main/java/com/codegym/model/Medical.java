@@ -1,9 +1,10 @@
 package com.codegym.model;
 
 public class Medical {
-    private String name ;
+    private int medicalId;
+    private String name;
     private String yearOfBirth;
-    private String gender ;
+    private String gender;
     private String nationality;
     private String id;
     private String information;
@@ -18,6 +19,28 @@ public class Medical {
     private String destinationArrived;
 
     public Medical() {
+    }
+
+    public Medical(int medicalId, String name, String yearOfBirth, String gender,
+                   String nationality, String id, String information, String vehicleId,
+                   String seats, int startDay, int startMonth, int startYear,
+                   int endDay, int endMonth, int endYear, String destinationArrived) {
+        this.medicalId = medicalId;
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.gender = gender;
+        this.nationality = nationality;
+        this.id = id;
+        this.information = information;
+        this.vehicleId = vehicleId;
+        this.seats = seats;
+        this.startDay = startDay;
+        this.startMonth = startMonth;
+        this.startYear = startYear;
+        this.endDay = endDay;
+        this.endMonth = endMonth;
+        this.endYear = endYear;
+        this.destinationArrived = destinationArrived;
     }
 
     public Medical(String name, String yearOfBirth, String gender,
@@ -39,6 +62,14 @@ public class Medical {
         this.endMonth = endMonth;
         this.endYear = endYear;
         this.destinationArrived = destinationArrived;
+    }
+
+    public int getMedicalId() {
+        return medicalId;
+    }
+
+    public void setMedicalId(int medicalId) {
+        this.medicalId = medicalId;
     }
 
     public String getName() {

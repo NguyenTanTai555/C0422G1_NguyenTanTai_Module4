@@ -18,8 +18,7 @@
 <body>
 <fieldset>
     <legend style="color: red">Medical Declaration</legend>
-    <table>
-        <tr>
+    <table>        <tr>
             <td>
                 <label>Họ và Tên : </label>
                 <span>

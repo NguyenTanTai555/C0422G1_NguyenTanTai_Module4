@@ -1,10 +1,13 @@
 package com.codegym.repository.impl;
 
+import com.codegym.model.Medical;
 import com.codegym.repository.IMedicalRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class MedicalRepository implements IMedicalRepository {
@@ -22,6 +25,8 @@ public class MedicalRepository implements IMedicalRepository {
     private static List<String> yearOfBirthList = new ArrayList<>();
 
     private static List<String> informationList = new ArrayList<>();
+
+    private static Map<Integer, Medical> medicalMap = new HashMap<>();
 
     static {
 
@@ -88,5 +93,27 @@ public class MedicalRepository implements IMedicalRepository {
     @Override
     public List<String> informationList() {
         return informationList;
+    }
+
+    @Override
+    public List<Medical> showMedical() {
+        return new ArrayList<>(medicalMap.values());
+    }
+
+    @Override
+    public void save(Medical medical) {
+        int id = medicalMap.size() + 1;
+        medical.setMedicalId(id);
+        medicalMap.put(id, medical);
+    }
+
+    @Override
+    public Medical findById(int medicalId) {
+        return medicalMap.get(medicalId);
+    }
+
+    @Override
+    public void update(int medicalId, Medical medical) {
+        medicalMap.put(medicalId, medical);
     }
 }

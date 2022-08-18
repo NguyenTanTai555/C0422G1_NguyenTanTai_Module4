@@ -21,7 +21,7 @@
     và có thể xử lý hình sự
 </p>
 
-<form:form action="/sen" method="post" modelAttribute="medical">
+<form:form action="/save" method="post" modelAttribute="medical">
     <div>Họ tên (ghi chữ IN HOA) <span>(*)</span></div>
     <div>
         <form:input path="name"/>
@@ -106,10 +106,10 @@
         Trong vòng 14 ngày qua, Anh/Chị có đến tỉnh/thành phố nào? <span>(*)</span>
     </div>
     <div>
-        <form:input path="destinationArrived"/>
+        <form:textarea path="destinationArrived"/>
     </div>
     <div>
-        <input type="submit" value="Sen">
+        <button type="submit">Cập nhật tờ khai</button>
     </div>
 
 </form:form>

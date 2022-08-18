@@ -1,6 +1,7 @@
 package com.codegym.service.impl;
 
 
+import com.codegym.model.Medical;
 import com.codegym.repository.IMedicalRepository;
 import com.codegym.service.IMedicalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +47,25 @@ public class MedicalService implements IMedicalService {
     @Override
     public List<String> informationList() {
         return this.iMedicalRepository.informationList();
+    }
+
+    @Override
+    public List<Medical> showMedical() {
+        return this.iMedicalRepository.showMedical();
+    }
+
+    @Override
+    public void save(Medical medical) {
+        this.iMedicalRepository.save(medical);
+    }
+
+    @Override
+    public Medical findById(int medicalId) {
+        return this.iMedicalRepository.findById(medicalId);
+    }
+
+    @Override
+    public void update(int medicalId, Medical medical) {
+        this.iMedicalRepository.update(medicalId, medical);
     }
 }

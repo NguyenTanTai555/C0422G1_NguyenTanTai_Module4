@@ -73,7 +73,7 @@ public class ProductController {
 
     @GetMapping("/find")
     public String findProductByName(@RequestParam String nameFind , Model model){
-        model.addAttribute("productList",this.iProductService.findByName(nameFind));
+        model.addAttribute("products",this.iProductService.findByName(nameFind));
         return "view";
     }
 }

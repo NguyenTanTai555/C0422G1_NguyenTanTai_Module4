@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/commont_product :: head">
+</head>
+<body>
+<h3>View Product</h3>
+<p>
+    <a th:href="@{/}">
+        Back to product list
+    </a>
+</p>
+<fieldset>
+    <legend>Product Detail</legend>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>: <span th:text="${products.name}"></span></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>: <span th:text="${products.price}"></span></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>: <span th:text="${products.describe}"></span></td>
+        </tr>
+        <tr>
+            <td>Producer</td>
+            <td>: <span th:text="${products.producer}"></span></td>
+        </tr>
+    </table>
+</fieldset>
+<footer th:replace="/commont_product :: footer"></footer>
+</body>
+</html>

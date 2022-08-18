@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/commont_product :: head">
+</head>
+<body>
+<p>
+    <a href="/create">
+        Add new Product
+    </a>
+</p>
+<form class="d-flex" action="/find" >
+    <input class="form-control me-2" type="search"
+           placeholder="Search" aria-label="Search"
+           name="nameFind">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<p th:if="${msg}"><span th:text="${msg}"></span></p>
+<p th:if="${update}"><span th:text="${update}"></span></p>
+<p th:if="${delete}"><span th:text="${delete}"></span></p>
+<table id = "customers">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Describe</th>
+        <th>Producer</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product,rowStat : ${products}">
+        <td th:text="${rowStat.count}"></td>
+        <td th:text="${product.productId}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.describe}"></td>
+        <td th:text="${product.producer}"></td>
+        <td><a th:href="@{/update/{id}(id=${product.getProductId()})}">edit</a></td>
+        <td><a th:href="@{/remove/{id}(id=${product.getProductId()})}">delete</a></td>
+        <td><a th:href="@{/view/{id}(id=${product.getProductId()})}">view</a></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/commont_product :: footer"></footer>
+</body>
+</html>

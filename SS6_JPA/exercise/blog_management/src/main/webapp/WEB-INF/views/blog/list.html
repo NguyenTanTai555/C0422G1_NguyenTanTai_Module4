@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog List</title>
+</head>
+<body>
+<h1>Blog List</h1>
+<a href="/create">Create new customer</a>
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Blog Name</th>
+        <th>Author Name</th>
+        <th>Content</th>
+    </tr>
+    <tr th:each="blogList,status :${blogList}">
+        <td th:text="${status.count}"></td>
+        <td th:text="${blogList.blogName}"></td>
+        <td th:text="${blogList.author}"></td>
+        <td th:text="${blogList.content}"></td>
+    </tr>
+</table>
+</body>
+</html>

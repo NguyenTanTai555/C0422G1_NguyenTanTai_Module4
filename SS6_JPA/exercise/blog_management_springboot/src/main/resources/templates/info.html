@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Info Blog</title>
+</head>
+<body>
+<fieldset>
+    <legend>Detail Blog</legend>
+    <table>
+        <tr th:object="${blog}">
+            <td th:text="*{idBlog}"></td>
+            <td th:text="*{author}"></td>
+            <td th:text="*{content}"></td>
+        </tr>
+    </table>
+</fieldset>
+</body>
+</html>

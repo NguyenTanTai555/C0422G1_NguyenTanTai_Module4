@@ -74,9 +74,9 @@ public class BlogController {
         return modelAndView;
     }
 
-    @GetMapping("/view-blog/{id}")
+    @GetMapping("/view/{id}")
     public ModelAndView viewBlog(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("/info");
+        ModelAndView modelAndView = new ModelAndView("/view");
         modelAndView.addObject("blog", iBlogService.findById(id));
         return modelAndView;
     }

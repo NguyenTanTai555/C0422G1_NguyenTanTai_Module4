@@ -76,7 +76,7 @@ public class BlogController {
     }
 
     @PostMapping("/delete")
-    public String deleteBlog(@RequestParam Integer id, Model model) {
+    public String deleteBlog(@RequestParam Integer id) {
         blogService.remove(id);
         return "redirect:/blog/list";
     }

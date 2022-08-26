@@ -6,7 +6,6 @@ import java.time.LocalDate;
 
 public class DataTimeUtil {
     public static boolean checkAge(UserDto userDto) {
-//        UserDto userDto = new UserDto();
         LocalDate now = LocalDate.now();
         Integer countAge = (now.getYear() - userDto.getAge().getYear());
         if (countAge < 18 || countAge > 100) {

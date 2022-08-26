@@ -24,7 +24,7 @@ public class MusicDto implements Validator {
     private String musicName;
 
     @NotBlank(message = "cannot be left blank")
-    @Size(min = 5, max = 45)
+    @Size(max = 300 , message = "Can not > 300 character")
     @Pattern(regexp = "^(([A-Z][a-z]+\\s?){1,5})$" ,message = "Enter Wrong format")
     private String artist;
 

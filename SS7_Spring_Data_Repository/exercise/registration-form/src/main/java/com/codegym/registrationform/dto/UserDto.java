@@ -1,5 +1,6 @@
 package com.codegym.registrationform.dto;
 
+import com.codegym.registrationform.unit.DataTimeUtil;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class UserDto implements Validator {
     @NotBlank(message = "Please Enter your first name")
-    @Size(min = 5, max = 10)
+    @Size(min = 5, max = 45)
     private String firstName;
 
     @NotBlank(message = "Please Enter last name")
@@ -45,12 +46,11 @@ public class UserDto implements Validator {
     public void validate(Object target, Errors errors) {
         try {
             UserDto userDto = (UserDto) target;
-            LocalDate now = LocalDate.now();
-            if ((now.getYear() - userDto.getAge().getYear()) <= 18) {
+            if (!DataTimeUtil.checkAge(userDto)) {
                 errors.rejectValue("age", "age.err", "wrong format");
             }
-        }catch (Exception e){
-            errors.rejectValue("age", "age.err", "day not null!! ");
+        } catch (Exception e) {
+            errors.rejectValue("age", "age.err", "Do not null");
         }
 
     }

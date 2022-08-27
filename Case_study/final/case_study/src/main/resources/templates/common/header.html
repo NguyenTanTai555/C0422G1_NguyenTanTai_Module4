@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:fragment="script">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/fontAwesome/all.min.css">
+        <script src="/fontAwesome/all.min.js"></script>
+    </th:block>
+</head>
+<body>
+<div class="container-fluid" th:fragment="header">
+    <div class="row d-flex bg-dark text-center" id="hd">
+        <div class="col-md-1 mt-1 text-end">
+            <a href="#bd"><span class="fa fa-earth-asia" style="height: 50px;width: 50px"></span></a>
+        </div>
+        <div class="col-md-5 text-white mt-3 text-start">
+            <h3>Furama Management</h3>
+        </div>
+        <div class="col-md-1">
+            <div class="btn bg-dark text-white hover-square">
+            <a><span class="fa fa-server"></span></a>
+                Facility
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="btn bg-dark text-white">
+                <a><span class="fa fa-circle-user text-primary"></span></a>
+                Employee
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="btn bg-dark text-white">
+                <a><span class="fa fa-circle-user text-warning"></span></a>
+                Customer</div>
+        </div>
+        <div class="col-md-1">
+            <div class="btn bg-dark text-white">
+                <a><span class="fa fa-book-open text-white"></span></a>
+                Contact</div>
+        </div>
+        <div class="col-md-2 pt-2">
+            <div class="btn bg-dark text-warning">
+                <span class="fa fa-phone text-primary"></span>
+                0905-774-661
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="/js/bootstrap.min.js/" th:fragment="scr"></script>
+</html>

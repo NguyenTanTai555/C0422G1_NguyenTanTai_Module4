@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{/common/header :: script }"></th:block>
+</head>
+<body>
+<div class="row mt-2" th:fragment="footer">
+    <footer class="text-white bg-dark">
+        <a href="#bd"></a>
+        <div class="container-fluid">
+            <div class="footer-link">
+                <div class="row">
+                    <div class="col-md-6 footer-left">
+                        <ul>
+                            <li>
+                                <a href="/privacy-policy"> PRIVACY POLICY</a>
+                            </li>
+                            <li>
+                                <a href="/terms-conditions"> TERMS &amp; CONDITIONS</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col md-6 footer-right">
+                        <ul>
+                            <li>
+                                <a href="/covid-19-safety-notice"> COVID - 19 SAFETY &amp; NOTICE</a>
+                            </li>
+                            <li>
+                                <a href="/payment-methods"> PAYMENT METHODS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-social">
+                <div class="row">
+                    <div class="col-md-12 text-center icon">
+                        <ul>
+                            <li><a><i class="fab fa-facebook"></i></a></li>
+                            <li><a><i class="fab fa-instagram"></i></a></li>
+                            <li><a><i class="fab fa-tiktok"></i></a></li>
+                            <li><a><i class="fab fa-youtube"></i></a></li>
+                            <li><a><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-12 copyright text-center">
+                        <small>Copyright © Eagle Hotel 2021 &nbsp; | &nbsp; <a href="https://webhotel.vn/">Buy info@webhotel.vn</a></small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

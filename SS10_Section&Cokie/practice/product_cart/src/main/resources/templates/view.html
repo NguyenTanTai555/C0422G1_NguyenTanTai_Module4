@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{/common ::css}"></th:block>
+</head>
+<body>
+<h1>PRODUCT DETAIL</h1>
+<p th:text="${product.name}"></p>
+<p th:text="${product.price}"></p>
+<p th:text="${product.description}"></p>
+<img th:src="${product.imgLink}" style="height: 100px ;width: auto">
+<a th:href="@{/add(id=${product.id},expression='+')}">Mua ngay</a>
+</body>
+</html>

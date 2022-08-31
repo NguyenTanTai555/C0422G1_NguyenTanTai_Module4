@@ -1,7 +1,7 @@
 package com.codegym.case_study.service.customer;
 
-import com.codegym.case_study.model.person.Customer;
-import com.codegym.case_study.model.person.CustomerType;
+import com.codegym.case_study.model.person.customer.Customer;
+import com.codegym.case_study.model.person.customer.CustomerType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

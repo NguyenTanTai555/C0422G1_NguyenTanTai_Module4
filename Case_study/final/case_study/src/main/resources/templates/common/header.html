@@ -10,38 +10,40 @@
     </th:block>
 </head>
 <body>
-<div class="container-fluid" th:fragment="header">
-    <div class="row d-flex bg-dark text-center" id="hd">
+<div class="container-fluid"  th:fragment="header">
+    <div class="row d-flex justify-content-center bg-opacity-100 bg-dark text-center " id="hd" >
         <div class="col-md-1 mt-1 text-end">
             <a href="#bd"><span class="fa fa-earth-asia" style="height: 50px;width: 50px"></span></a>
         </div>
-        <div class="col-md-5 text-white mt-3 text-start">
+        <div class="col-md-3 text-light mt-3 text-start">
             <h3>Furama Management</h3>
         </div>
-        <div class="col-md-1">
-            <div class="btn bg-dark text-white hover-square">
-            <a href="/facility"><span class="fa fa-server text-danger"></span></a>
+        <div class="col-md-1 mt-3 ">
+            <div class=" text-light hover-square ">
+            <a href="/facility"><span class="fa fa-server hover-square"></span></a>
                 Facility
             </div>
         </div>
-        <div class="col-md-1">
-            <div class="btn bg-dark text-white">
-                <a href="/employee"><span class="fa fa-circle-user text-primary"></span></a>
+        <div class="col-md-2 mt-3 ">
+            <div class="text-light hover-square ">
+                <a href="/employee"><span class="fa fa-circle-user hover-square"></span></a>
                 Employee
             </div>
         </div>
-        <div class="col-md-1">
-            <div class="btn bg-dark text-white">
-                <a href="/customer"><span class="fa fa-circle-user text-warning"></span></a>
-                Customer</div>
+        <div class="col-md-2 mt-3 ">
+            <div class=" text-light hover-square ">
+                <a href="/customer"><span class="fa fa-circle-user hover-square"></span></a>
+                Customer
+            </div>
         </div>
-        <div class="col-md-1">
-            <div class="btn bg-dark text-white">
-                <a href="/contract"><span class="fa fa-book-open text-success"></span></a>
-                Contact</div>
+        <div class="col-md-1 mt-3 ">
+            <div class="text-light hover-square">
+                <a href="/contract"><span class="fa fa-book-open hover-square"></span></a>
+                Contact
+            </div>
         </div>
-        <div class="col-md-2 pt-2">
-            <div class="btn bg-dark text-warning">
+        <div class="col-md-2 mt-3">
+            <div class="text-light hover-square" >
                 <span class="fa fa-phone"></span>
                 <span class="js-phone-number">(090) 577-4661</span>
             </div>

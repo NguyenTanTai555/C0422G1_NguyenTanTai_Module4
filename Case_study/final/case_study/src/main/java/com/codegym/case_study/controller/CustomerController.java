@@ -1,6 +1,6 @@
 package com.codegym.case_study.controller;
 
-import com.codegym.case_study.model.person.Customer;
+import com.codegym.case_study.model.person.customer.Customer;
 import com.codegym.case_study.service.customer.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;

@@ -1,4 +1,4 @@
-package com.codegym.case_study.model.person;
+package com.codegym.case_study.model.person.employee;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,17 +7,21 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table
-public class CustomerType {
+public class EducationDegree {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer customerTypeId;
-    private String customerTypeName;
-    @OneToMany(mappedBy = "customerType",cascade = CascadeType.ALL)
-    private List<Customer> customerList;
+    private Integer idEducation;
+
+    private String nameEducation;
+
+    @OneToMany(mappedBy = "educationDegree",cascade = CascadeType.ALL)
+    private List<Employee> employees;
+
 }

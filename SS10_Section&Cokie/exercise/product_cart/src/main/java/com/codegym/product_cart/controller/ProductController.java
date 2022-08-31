@@ -49,8 +49,8 @@ public class ProductController {
     @GetMapping("/create")
     public String createCart(@RequestParam (defaultValue = "0")Integer id ,
                              String expression,
-                             Model model,
-                             @SessionAttribute Map<Product,Integer> cart){
+                             @SessionAttribute Map<Product,Integer> cart,
+                             Model model){
         Optional<Product> productOptional = productService.findById(id);
         if (!productOptional.isPresent()){
             return "/error";
@@ -58,14 +58,16 @@ public class ProductController {
         cartService.changeCart(cart,id,expression);
         model.addAttribute("total", cartService.total(cart));
         model.addAttribute("cart", cart);
-        return "cart";
+        return "/cart";
     }
     @GetMapping("/remove")
-    public String removeToCart(@SessionAttribute Map<Product, Integer> cart,@RequestParam Integer id, Model model ){
+    public String removeToCart(@SessionAttribute Map<Product, Integer> cart,
+                               @RequestParam Integer id,
+                               Model model ){
         Product product = productService.findById(id).orElse(null);
         cart.remove(product);
         model.addAttribute("total", cartService.total(cart));
         model.addAttribute("cart", cart);
-        return "cart";
+        return "/cart";
     }
 }

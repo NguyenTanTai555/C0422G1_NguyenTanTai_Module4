@@ -20,4 +20,5 @@ public class ShoppingCartController {
         model.addAttribute("total", cartService.total(cart));
         return "cart";
     }
+
 }

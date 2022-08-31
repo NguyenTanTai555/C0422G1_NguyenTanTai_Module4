@@ -6,53 +6,69 @@
     <th:block th:replace="~{/common/header :: script }"></th:block>
 </head>
 <body>
-<div class="row mt-2" th:fragment="footer">
-    <footer class="text-white bg-dark" id="bd">
-        <div class="container-fluid">
-            <div class="footer-link">
-                <div class="row">
-                    <div class="col-md-6 footer-left">
-                        <ul>
-                            <li>
-                                <a href="/https://www.google.com/maps/place/Furama+Resort+Danang/@16.0399507,108.2488794,17z/data=!3m1!4b1!4m8!3m7!1s0x31420fdbc8cc38ef:0x9a6a3e31121225d2!5m2!4m1!1i2!8m2!3d16.0399456!4d108.2510681?hl=vi-VN"> LOCATION</a>
-                            </li>
-                            <li>
-                                <a href="/terms-conditions"> TERMS &amp; CONDITIONS</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col md-6 footer-right">
-                        <ul>
-                            <li>
-                                <a href="/covid-19-safety-notice"> COVID - 19 SAFETY &amp; NOTICE</a>
-                            </li>
-                            <li>
-                                <a href="/payment-methods"> PAYMENT METHODS</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-social">
-                <div class="row">
-                    <div class="col-md-12 text-center icon">
-                        <ul>
-                            <li><a><i class="fab fa-facebook"></i></a></li>
-                            <li><a><i class="fab fa-instagram"></i></a></li>
-                            <li><a><i class="fab fa-tiktok"></i></a></li>
-                            <li><a><i class="fab fa-youtube"></i></a></li>
-                            <li><a><i class="fab fa-twitter"></i></a></li>
-                        </ul>
-                    </div>
+<div class="footer bg-dark" th:fragment="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-12">
+                <div class="col-md-4 col-xs-12">
+                    <div style="padding-bottom: 50px;">
 
-                    <div class="col-sm-12 copyright text-center">
-                        <small>Copyright © Eagle Hotel 2021 &nbsp; | &nbsp; <a href="https://webhotel.vn/">Buy info@webhotel.vn</a></small>
+                        <div class="footer-logo m-2" >
+                            <img src="/img/FURAMA.png" width="50px; margin:10px 0">
+                        </div>
                     </div>
 
                 </div>
+                <div class="col-md-5 col-xs-12 mt-1">
+                    <div style="padding-bottom: 50px;">
+                        <div class="footer-title text-white">
+                            <h3>FURAMA RESORT</h3>
+                        </div>
+                        <div class="footer-content">
+                            <p>
+                                <i class="fa fa-map-marker"></i>
+                                <span style="color: rgb(212, 163, 77);">Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng</span>
+                            </p>
+                            <p>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span style="color: rgb(212, 163, 77);"> Phone: 0242 242 0777</span>
+                                <br>
+                            </p>
+                            <p>
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <a href="mailto:info@webhotel.vn" style="color: rgb(212, 163, 77);"> Email: info@webhotel.vn</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="footer-title">
+                        <h3 style="color: rgb(212, 163, 77);">CÁC KÊNH THÔNG TIN CHÍNH THỨC</h3>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-links">
+                            <a href="https://www.facebook.com/">
+                                <i class="fa-brains fa-facebook" style="width: 30px ;height: auto"></i>
+                            </a>
+                            <br>
+                            <a href="https://twitter.com/">
+                                <i class="fa-brands fa-square-twitter" style="width: 30px ;height: auto"></i>
+                            </a>
+                            <br>
+                            <a href="https://www.youtube.com/?gl=VN">
+                                <i class="fa-brands fa-youtube text-warning" style="width: 30px ;height: auto"></i>
+                            </a>
+                            <br>
+                            <a href="https://www.instagram.com/">
+                                <i class=" fa-instagram" style="width: 30px ;height: auto"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
-    </footer>
+    </div>
 </div>
 </body>
 </html>

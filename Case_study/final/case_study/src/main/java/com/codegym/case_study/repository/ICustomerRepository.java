@@ -1,6 +1,6 @@
 package com.codegym.case_study.repository;
 
-import com.codegym.case_study.model.person.Customer;
+import com.codegym.case_study.model.person.customer.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

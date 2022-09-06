@@ -15,32 +15,33 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
-
 @RestController
-@RequestMapping("/blogs")
-public class BlogRestController {
+@RequestMapping("/categories")
+public class CategoryRestController {
+
 
     @Autowired
     private IBlogService blogService;
 
+    @Autowired
+    private ICategoryService categoryService;
 
-    @GetMapping()
-    public ResponseEntity<Page<Blog>> findAllPage(@PageableDefault(size = 3) Pageable pageable) {
-        Page<Blog> blogs = this.blogService.findAll(pageable);
-        if (!blogs.hasContent()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(blogs, HttpStatus.OK);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Blog> findBlogById(@PathVariable Integer id) {
-        Optional<Blog> blogOptional = this.blogService.findById(id);
-        if (!blogOptional.isPresent()) {
+    @GetMapping("/category")
+    public ResponseEntity<Page<Category>> findAllCategory(@PageableDefault(size = 3) Pageable pageable) {
+        Page<Category> categories = this.categoryService.findAll(pageable);
+        if (!categories.hasContent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(blogOptional.get(), HttpStatus.OK);
+        return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 
+    @GetMapping("/category/{id}")
+    public ResponseEntity<Page<Blog>> findBlogOfCategoryId(@PageableDefault(size = 3) Pageable pageable,
+                                                           @PathVariable Integer id) {
+        Page<Blog> blogPage = this.blogService.findAllBlogByCategoryId(id, pageable);
+        if (!blogPage.hasContent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(blogPage, HttpStatus.OK);
+    }
 }

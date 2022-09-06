@@ -62,8 +62,8 @@
                         <td>${smartphoneList[i].producer}</td>
                         <td>${smartphoneList[i].model}</td>
                         <td>${smartphoneList[i].price}</td>
-                        <td><button onclick="UpdateFunction(${smartphoneList[i].id})">Update</button></td>
-                        <td><button onclick="DeleteFunction(${smartphoneList[i].id})">Delete</button></td>
+                        <td><button onclick="updateFunction(${smartphoneList[i].id})">Update</button></td>
+                        <td><button onclick="deleteFunction(${smartphoneList[i].id})">Delete</button></td>
                     </tr>`;
                 }
 
@@ -105,7 +105,7 @@
             }
         });
     });
-    function DeleteFunction(id) {
+    function deleteFunction(id) {
         $.ajax({
 
             headers: {
@@ -121,7 +121,7 @@
             }
         });
     }
-    function UpdateFunction(id) {
+    function updateFunction(id) {
         $.ajax({
             headers: {
                 'Accept': 'application/json',

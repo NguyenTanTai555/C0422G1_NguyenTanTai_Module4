@@ -1,5 +1,7 @@
 package com.codegym.case_study.model.contract;
 
+import com.codegym.case_study.model.contract.AttachFacility;
+import com.codegym.case_study.model.contract.Contract;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,8 @@
 package com.codegym.case_study.model.contract;
 
+import com.codegym.case_study.model.customer.Customer;
+import com.codegym.case_study.model.employee.Employee;
 import com.codegym.case_study.model.facility.Facility;
-import com.codegym.case_study.model.person.customer.Customer;
-import com.codegym.case_study.model.person.employee.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

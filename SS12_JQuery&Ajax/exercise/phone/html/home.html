@@ -41,7 +41,10 @@
     </tbody>
 
 </table>
-<table id="edit" border="1"></table>
+<table id="edit" border="1">
+    
+</table>
+<td><button id="hideForm">Hide form</button></td>
 </body>
 <script src="js/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
@@ -146,11 +149,15 @@
                      <td><input value='${smartphone.price}' id='priceEdit'></td>
                  </tr>
                  <tr>
-                     <td><button onclick="update(${smartphone.id})">Update</button>
+                     <td><button  onclick="update(${smartphone.id})">Update</button>
+
                  </td>
+
                  </tr>`;
     }
-
+    $("#hideForm").click(function () {
+        $("#edit").hide();
+    })
     function update(id) {
         let producer = $('#producerEdit').val();
         let model = $('#modelEdit').val();

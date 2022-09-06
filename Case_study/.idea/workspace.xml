@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="120e9213-5faf-428c-a49d-7211ed7e48a5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/entity/AppRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/entity/AppUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/entity/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/repository/AppUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/repository/UserRoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/until/EncrytedPasswordUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/java/com/example/practice/until/WebUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/resources/templates/403Page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/resources/templates/_menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/resources/templates/amindPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/resources/templates/loginPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/resources/templates/logoutSuccessfulPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/resources/templates/userInfoPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss14_spring_security/practice/src/main/resources/templates/welcomePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS12_JQuery&amp;Ajax/exercise/phone/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SS12_JQuery&amp;Ajax/exercise/phone/html/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS1_SpringMVC/practice/practice2/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../SS1_SpringMVC/practice/practice2/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SS5_ORM(object_relational_mapping)/pactice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../SS5_ORM(object_relational_mapping)/pactice/customer-management" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2EOYVxbopYgxaGiv8UEUWhKe1nY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/final/case_study" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="120e9213-5faf-428c-a49d-7211ed7e48a5" name="Changes" comment="" />
+      <created>1662468125310</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662468125310</updated>
+      <workItem from="1662468126513" duration="22000" />
+    </task>
+    <servers />
+  </component>
+</project>

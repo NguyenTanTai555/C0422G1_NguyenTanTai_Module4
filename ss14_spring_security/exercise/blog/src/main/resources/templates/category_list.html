@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{/common :: css}"></th:block>
+
+</head>
+<body>
+<h1>Category List</h1>
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>View Category</th>
+    </tr>
+    <tr th:each="category,status :${category}">
+        <td th:text="${status.count}"></td>
+        <td th:text="${category.categoryId}"></td>
+        <td th:text="${category.categoryName}"></td>
+    </tr>
+</table>
+</body>
+</html>

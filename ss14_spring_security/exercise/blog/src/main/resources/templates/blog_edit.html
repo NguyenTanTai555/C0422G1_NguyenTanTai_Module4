@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{/common :: css}"></th:block>
+
+</head>
+<body>
+<div class="container" style="margin: auto">
+    <form action="/edit" method="post" th:object="${blog}">
+        <div >
+            <select th:field="*{category}" >
+                <option th:each="categorys : ${category}"
+                        th:value="${categorys.categoryId}"
+                        th:text="${categorys.categoryName}">
+                </option>
+            </select>
+        </div>
+        <label>Id</label>
+        <input readonly th:field="*{idBlog}">
+        <label>Blog name</label>
+        <input th:field="*{nameBlog}">
+        <label>Blog content</label>
+        <textarea th:field="*{content}"></textarea>
+        <input type="submit" value="edit">
+    </form>
+</div>
+</body>
+</html>

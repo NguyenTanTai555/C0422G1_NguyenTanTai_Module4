@@ -1,22 +1,26 @@
-package com.codegym.blog.controller;
+package com.example.blog.controller;
 
-import com.codegym.blog.model.Blog;
-import com.codegym.blog.model.Category;
-import com.codegym.blog.service.IBlogService;
-import com.codegym.blog.service.ICategoryService;
+import com.example.blog.entity.Blog;
+import com.example.blog.service.IBlogService;
+import com.example.blog.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.parameters.P;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/blogs")
 public class BlogController {
     @Autowired
     private IBlogService blogService;
@@ -27,41 +31,46 @@ public class BlogController {
     public String listBlog(Model model,
                            @PageableDefault(size = 5) Pageable pageable,
                            @RequestParam Optional<String> name,
-                           @RequestParam Optional<String> categoryName) {
+                           Principal principal) {
         String keyName = name.orElse("");
-        String categoryNames = categoryName.orElse("");
-        Page<Blog> blogPage = blogService.findAll(keyName, categoryNames, pageable);
-        model.addAttribute("blogList", blogPage);
+        Page<Blog> page = blogService.findAll(pageable);
+        model.addAttribute("blogList", page);
         model.addAttribute("category", categoryService.findAllCategory());
         model.addAttribute("keyVal", keyName);
-        return "/blogs/list";
+        if (principal==null){
+            return "/blog_list";
+        }
+        User loginedUser = (User) ((Authentication) principal).getPrincipal();
+        model.addAttribute("userinfo",loginedUser.getAuthorities());
+        return "/blog_list";
     }
-
+//
     @GetMapping("/view-blog/{id}")
     public ModelAndView viewBlog(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("/blogs/view");
+        System.out.println(id);
+        ModelAndView modelAndView = new ModelAndView("/view");
         modelAndView.addObject("blog", blogService.findById(id));
         return modelAndView;
     }
 
     @GetMapping("/showFormCreate")
     public ModelAndView formCreateBlog() {
-        ModelAndView modelAndView = new ModelAndView("/blogs/create");
+        ModelAndView modelAndView = new ModelAndView("/blog_create");
         modelAndView.addObject("blog", new Blog());
         modelAndView.addObject("category", categoryService.findAllCategory());
         return modelAndView;
     }
 
-    @PostMapping("create")
+    @PostMapping("/create")
     public ModelAndView createBlog(@ModelAttribute Blog blog) {
-        ModelAndView modelAndView = new ModelAndView("/blogs/create");
+        ModelAndView modelAndView = new ModelAndView("/blog_create");
         blogService.save(blog);
         return modelAndView;
     }
 
     @GetMapping("/edit-blog/{id}")
     public ModelAndView formEditBlog(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("/blogs/edit");
+        ModelAndView modelAndView = new ModelAndView("/blog_edit");
         Blog blog = blogService.findById(id);
         modelAndView.addObject("blog", blog);
         modelAndView.addObject("category", categoryService.findAllCategory());
@@ -80,7 +89,6 @@ public class BlogController {
         blogService.remove(id);
         return "redirect:/blog/list";
     }
-
 
 
 }

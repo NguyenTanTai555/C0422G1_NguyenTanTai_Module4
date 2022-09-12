@@ -30,6 +30,16 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
+    public Page<Facility> findAllByFacilityType(Long id, Pageable pageable) {
+        return facilityRepository.findAllByFacilityId_Id(id,pageable);
+    }
+
+    @Override
+    public List<Facility> listFacility() {
+        return facilityRepository.findAll();
+    }
+
+    @Override
     public List<FacilityType> listFacilityType() {
         return facilityTypeRepository.findAll();
     }

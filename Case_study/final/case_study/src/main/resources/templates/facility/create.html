@@ -8,7 +8,7 @@
 <body>
 <div th:replace="~{/common/header :: header}"></div>
 <div class="container w-50 mt-2 p-2" style="border: 1px solid grey; border-radius: 15px">
-    <h3 align="center">THÊM MỚI DỊCH VỤ</h3>
+    <h3 align="center">ADD FACILITY</h3>
     <form class="row g-3" action="/facility/create" method="post" th:object="${facilityDto}">
         <div class="col-md-12">
             <label class="form-label">Loại dịch vụ</label>
@@ -22,27 +22,27 @@
         </div>
 
         <div class="col-md-12">
-            <label for="name" class="form-label">Tên dịch vụ</label>
+            <label for="name" class="form-label">Facility Name</label>
             <input type="text" class="form-control" th:field="*{name}" id="name" required>
         </div>
 
         <div class="col-md-12">
-            <label for="area" class="form-label">Diện tích sử dụng</label>
+            <label for="area" class="form-label">Use Are</label>
             <input type="text" class="form-control" id="area" th:field="*{area}"required>
         </div>
 
         <div class="col-md-12">
-            <label for="cost" class="form-label">Chi phí thuê</label>
+            <label for="cost" class="form-label">Cost</label>
             <input type="text" class="form-control" id="cost" th:field="*{cost}" required>
         </div>
 
         <div class="col-md-12">
-            <label for="max_people" class="form-label">Số lượng người tối đa </label>
+            <label for="max_people" class="form-label">Max People </label>
             <input type="text" class="form-control" id="max_people" th:field="*{maxPeople}" required>
         </div>
 
         <div class="col-md-12">
-            <label  class="form-label">Kiểu thuê</label>
+            <label  class="form-label">Rent Type</label>
             <select name="rentalType"  class="form-select" th:field="*{rentType}"required>
                 <option value="None" disabled selected>Chọn kiểu thuê</option>
                 <option th:each="rent : ${rentType}"

@@ -8,6 +8,8 @@ import lombok.Setter;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Getter
@@ -15,7 +17,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AttachFacilityDto implements Validator {
+    @NotBlank
+    @NotNull
     private Long id;
+    @NotBlank
     private String name;
     private double cost;
     private String unit;

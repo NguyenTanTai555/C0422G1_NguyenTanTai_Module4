@@ -33,7 +33,7 @@ public class CustomerController {
     @GetMapping("/list")
     public ModelAndView listFacility(@PageableDefault(size = 5) Pageable pageable,
                                      @RequestParam Optional<String> name,
-                                     @RequestParam Optional<String> typeCustomer) {
+                                     @RequestParam Optional<String> typeCustomer ) {
         ModelAndView modelAndView = new ModelAndView("customer/list");
         String keyName = name.orElse("");
         String keyTypeCustomer = typeCustomer.orElse("");
@@ -81,7 +81,8 @@ public class CustomerController {
         CustomerDto customerDto = new CustomerDto();
         BeanUtils.copyProperties(customer, customerDto);
         model.addAttribute("customerDto", customerDto);
-        return "customer/edit";
+        return "/customer/edit";
+
     }
 
     @PostMapping("/edit")
@@ -92,15 +93,16 @@ public class CustomerController {
         new CustomerDto().validate(customerDto, bindingResult);
         model.addAttribute("customerDto", customerDto);
         if (bindingResult.hasErrors()) {
-            model.addAttribute("customerType",
-                    iCustomerService.findAllTypeCustomer());
-            return "customer/edit";
+            model.addAttribute("customerType", iCustomerService.findAllTypeCustomer());
+            return "/customer/edit";
         }
         Customer customer = new Customer();
+
         BeanUtils.copyProperties(customerDto, customer);
         TypeCustomer typeCustomer = new TypeCustomer();
         typeCustomer.setTypeCustomerId(customerDto.getTypeCustomerDto().getId());
         customer.setTypeCustomer(typeCustomer);
+
         iCustomerService.saveCustomer(customer);
         redirectAttributes.addFlashAttribute("msg", "edit success");
         return "redirect:/customer/list";

@@ -52,4 +52,5 @@ public class Facility {
         this.rentType = rentType;
         this.contractList = contractList;
     }
+
 }

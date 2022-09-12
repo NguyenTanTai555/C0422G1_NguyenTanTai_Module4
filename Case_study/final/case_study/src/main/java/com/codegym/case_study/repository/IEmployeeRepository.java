@@ -1,12 +1,13 @@
 package com.codegym.case_study.repository;
 
-import com.codegym.case_study.model.contract.AttachFacility;
+import com.codegym.case_study.model.employee.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 
-@Transactional
 @Repository
-public interface IAttachFacilityRepository extends JpaRepository<AttachFacility , Long> {
+@Transactional
+public interface IEmployeeRepository extends JpaRepository<Employee,Long> {
+
 }

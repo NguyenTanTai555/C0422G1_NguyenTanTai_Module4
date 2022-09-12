@@ -9,7 +9,13 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface IContractService {
-    Page<Contract> listContract(String facilityName, Pageable pageable);
+    Page<Contract> listContract(String facilityName, String customerName, Pageable pageable);
+
+    List<Contract> findAll();
+
+    List<ContractDetail> listContractDetail();
+
+    List<ContractDetail> listContractDetail(Long id);
 
     void saveContractDetail(ContractDetail contractDetail);
 

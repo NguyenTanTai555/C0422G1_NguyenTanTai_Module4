@@ -25,6 +25,10 @@ public class CustomerService implements ICustomerService {
 
     }
 
+    @Override
+    public List<Customer> findAllCustomer() {
+        return iCustomerRepository.findAll();
+    }
 
 
     @Override

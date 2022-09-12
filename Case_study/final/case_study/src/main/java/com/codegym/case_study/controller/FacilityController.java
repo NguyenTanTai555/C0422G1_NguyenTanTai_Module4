@@ -2,7 +2,9 @@ package com.codegym.case_study.controller;
 
 import com.codegym.case_study.dto.facility.FacilityDto;
 import com.codegym.case_study.model.facility.Facility;
+import com.codegym.case_study.model.facility.FacilityType;
 import com.codegym.case_study.service.IFacilityService;
+import com.codegym.case_study.service.IFacilityTypeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,6 +24,9 @@ import java.util.Optional;
 @RequestMapping("/facility")
 public class FacilityController {
     @Autowired
+    private IFacilityTypeService iFacilityTypeService;
+
+    @Autowired
     private IFacilityService facilityService ;
 
     @GetMapping("")
@@ -35,9 +40,19 @@ public class FacilityController {
                                      @RequestParam Optional<String> name) {
         ModelAndView modelAndView = new ModelAndView("facility/list");
         String keyName = name.orElse("");
+
         Page<Facility> facilityPage = facilityService.listFacility(keyName, pageable);
         modelAndView.addObject("facilityPage", facilityPage);
         modelAndView.addObject("keyName", keyName);
+
+        modelAndView.addObject("facilityType",
+                this.facilityService.listFacilityType());
+//        if (!facilityTypeSearch.isPresent()){
+//            modelAndView.addObject("facilities", this.facilityService.findAll(pageable));
+//        } else {
+//            modelAndView.addObject("facilities",
+//                    this.facilityService.findAllByFacilityType(facilityTypeSearch.get(), pageable));
+//        }
         return modelAndView;
     }
 
@@ -77,9 +92,15 @@ public class FacilityController {
         Facility facility = facilityService.findById(id);
         FacilityDto facilityDto = new FacilityDto();
         BeanUtils.copyProperties(facility, facilityDto);
-        model.addAttribute("facilityDto", facilityDto);
+        model.addAttribute("facility", facilityDto);
         model.addAttribute("facilityType", facilityService.listFacilityType());
         model.addAttribute("rentType", facilityService.listRentType());
         return "facility/edit";
+    }
+
+    @PostMapping("/edit")
+    public String editFacility(@ModelAttribute Facility facility){
+        this.facilityService.saveFacility(facility);
+        return "redirect:/facility/list";
     }
 }

@@ -1,5 +1,6 @@
 package com.codegym.case_study.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +21,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/list")
-    public ModelAndView listFacility(@PageableDefault(size = 3)Pageable pageable,
+    public ModelAndView listEmployee(@PageableDefault(size = 3)Pageable pageable,
                                      @RequestParam Optional<String> name,
-                                     @RequestParam Optional<String> typeCustomer){
+                                     @RequestParam Optional<String> typeEmployee){
         ModelAndView modelAndView = new ModelAndView("employee/list");
         return modelAndView;
     }

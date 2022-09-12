@@ -26,8 +26,23 @@ public class ContractService implements IContractService {
     private IAttachFacilityRepository iAttachFacilityRepository;
 
     @Override
-    public Page<Contract> listContract(String facilityName, Pageable pageable) {
-        return iContractRepository.findAllByFacility_NameContaining(facilityName, pageable);
+    public List<ContractDetail> listContractDetail() {
+        return iContractDetailRepository.findAll();
+    }
+
+    @Override
+    public List<ContractDetail> listContractDetail(Long id) {
+        return iContractDetailRepository.findByContract_Id(id);
+    }
+
+    @Override
+    public Page<Contract> listContract(String facilityName,String customerName, Pageable pageable) {
+        return iContractRepository.findAllByFacility_NameContainingAndCustomer_NameContaining(facilityName,customerName, pageable);
+    }
+
+    @Override
+    public List<Contract> findAll() {
+        return iContractRepository.findAll();
     }
 
     @Override

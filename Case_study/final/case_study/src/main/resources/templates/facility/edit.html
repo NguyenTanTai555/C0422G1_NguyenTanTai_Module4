@@ -8,20 +8,20 @@
 <body>
 <div th:replace="~{/common/header :: header}"></div>
 <div class="container w-50 mt-2 p-2" style="border: 1px solid grey; border-radius: 15px">
-  <h3 align="center">SỬA THÔNG TIN DỊCH VỤ</h3>
-  <form class="row g-3" action="/facility/create" method="post" th:object="${facilityDto}">
+  <h3 align="center">Edit Form Facility</h3>
+  <form class="row g-3" action="/facility/edit" method="post" th:object="${facility}">
     <div class="col-md-12">
       <label class="form-label">Loại dịch vụ</label>
       <select name="serviceType"  th:field="*{facilityId}" class="form-select" onchange="showServiceInput(this)" id="serviceSelect">
-        <option th:each="facilityType: ${facilityType}"
-                th:value="${facilityType.id}"
-                th:text="${facilityType.name}">
+        <option th:each="type: ${facilityType}"
+                th:value="${type.id}"
+                th:text="${type.name}">
         </option>
       </select>
     </div>
 
     <div class="col-md-12">
-      <label for="id" class="form-label">Mã dịch vụ</label>
+      <label for="id" class="form-label">Facility Id</label>
       <input type="text" class="form-control" readonly th:field="*{id}" id="id" required>
     </div>
 
@@ -91,56 +91,91 @@
     var v = value.value;
     switch (v) {
       case 'None':
-        document.getElementById("s1").style.display="none";
-        document.getElementById("s2").style.display="none";
-        document.getElementById("s3").style.display="none";
-        document.getElementById("s4").style.display="none";
-        document.getElementById("s5").style.display="none";
+        $("#s1").hide();
+        $("#s2").hide();
+        $("#s3").hide();
+        $("#s4").hide();
+        $("#s5").hide();
+        // document.getElementById("s1").style.display="none";
+        // document.getElementById("s2").style.display="none";
+        // document.getElementById("s3").style.display="none";
+        // document.getElementById("s4").style.display="none";
+        // document.getElementById("s5").style.display="none";
         break;
       case "1":
-        document.getElementById("s1").style.display="block";
-        document.getElementById("s2").style.display="block";
-        document.getElementById("s3").style.display="block";
-        document.getElementById("s4").style.display="block";
-        document.getElementById("s5").style.display="none";
+        $("#s1").show();
+        $("#s2").show();
+        $("#s3").show();
+        $("#s4").show();
+        $("#s5").hide();
+        // document.getElementById("s1").style.display="block";
+        // document.getElementById("s2").style.display="block";
+        // document.getElementById("s3").style.display="block";
+        // document.getElementById("s4").style.display="block";
+        // document.getElementById("s5").style.display="none";
         break;
       case "2":
-        document.getElementById("s1").style.display="block";
-        document.getElementById("s2").style.display="block";
-        document.getElementById("s4").style.display="block";
-        document.getElementById("s5").style.display="none";
-        document.getElementById("s3").style.display="none";
+        $("#s1").show();
+        $("#s2").show();
+        $("#s3").show();
+        $("#s4").hide();
+        $("#s5").hide();
+        // document.getElementById("s1").style.display="block";
+        // document.getElementById("s2").style.display="block";
+        // document.getElementById("s4").style.display="block";
+        // document.getElementById("s5").style.display="none";
+        // document.getElementById("s3").style.display="none";
         break;
       case "3":
-        document.getElementById("s1").style.display="none";
-        document.getElementById("s2").style.display="none";
-        document.getElementById("s3").style.display="none";
-        document.getElementById("s4").style.display="none";
-        document.getElementById("s5").style.display="block";
+        $("#s1").hide();
+        $("#s2").hide();
+        $("#s3").hide();
+        $("#s4").hide();
+        $("#s5").show();
+        // document.getElementById("s1").style.display="none";
+        // document.getElementById("s2").style.display="none";
+        // document.getElementById("s3").style.display="none";
+        // document.getElementById("s4").style.display="none";
+        // document.getElementById("s5").style.display="block";
         break;
     }
   }
   window.onload=function (){
     if( document.getElementById("serviceSelect").value =='1'){
-      document.getElementById("s1").style.display="block";
-      document.getElementById("s2").style.display="block";
-      document.getElementById("s3").style.display="block";
-      document.getElementById("s4").style.display="block";
-      document.getElementById("s5").style.display="none";
+      $("#s1").show();
+      $("#s2").show();
+      $("#s3").show();
+      $("#s4").show();
+      $("#s5").hide();
+      // document.getElementById("s1").style.display="block";
+      // document.getElementById("s2").style.display="block";
+      // document.getElementById("s3").style.display="block";
+      // document.getElementById("s4").style.display="block";
+      // document.getElementById("s5").style.display="none";
     }
     if( document.getElementById("serviceSelect").value =='2') {
-      document.getElementById("s1").style.display="block";
-      document.getElementById("s2").style.display="block";
-      document.getElementById("s4").style.display="block";
-      document.getElementById("s5").style.display="none";
-      document.getElementById("s3").style.display="none";
+      $("#s1").show();
+      $("#s2").show();
+      $("#s3").show();
+      $("#s4").hide();
+      $("#s5").hide();
+      // document.getElementById("s1").style.display="block";
+      // document.getElementById("s2").style.display="block";
+      // document.getElementById("s4").style.display="block";
+      // document.getElementById("s5").style.display="none";
+      // document.getElementById("s3").style.display="none";
     }
     if( document.getElementById("serviceSelect").value =='3') {
-      document.getElementById("s1").style.display="none";
-      document.getElementById("s2").style.display="none";
-      document.getElementById("s3").style.display="none";
-      document.getElementById("s4").style.display="none";
-      document.getElementById("s5").style.display="block";
+      $("#s1").hide();
+      $("#s2").hide();
+      $("#s3").hide();
+      $("#s4").hide();
+      $("#s5").show();
+      // document.getElementById("s1").style.display="none";
+      // document.getElementById("s2").style.display="none";
+      // document.getElementById("s3").style.display="none";
+      // document.getElementById("s4").style.display="none";
+      // document.getElementById("s5").style.display="block";
     }
   }
 </script>
